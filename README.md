@@ -1,86 +1,91 @@
-# 🚀 DAC Node Auto Setup (VPS / WSL)
+# 🚀 DAC Node Setup Script (VPS / WSL)
 
 **by TheUGultimatum**
 
-Run a DAC Chain Testnet node with wallet + faucet + background execution — fully automated.
+Run a DAC Chain Testnet node with wallet creation + faucet flow + background execution — all in one script.
 
 ---
 
 ## ⚡ Features
 
-- 🔐 Auto wallet creation (CLI-based keystore)
+- 🔐 Wallet creation using DAC CLI (keystore)
+- 💧 Faucet-ready workflow
 - 🚀 One-command node setup
-- 🖥️ Runs in background using `screen`
+- 🖥️ Runs in background using screen
 - 🌐 Works on VPS & WSL
-- 🧹 Easy cleanup script included
-- ⚡ Lightweight (no Docker needed)
+- 🧹 Cleanup script included
+- ⚡ No Docker required
 
 ---
 
 ## 🧠 Requirements
 
-- Ubuntu VPS / WSL (Ubuntu 20+ recommended)
+- Ubuntu VPS / WSL (20.04 / 22.04 / 24.04)
 - Internet connection
-- Basic terminal access
+- Basic terminal usage
 
 ---
 
 ## 📥 Installation
 
 ```bash
-wget https://raw.githubusercontent.com/TheUGultimatum/quip-node-for-vps/main/dac.sh
+wget https://raw.githubusercontent.com/TheUGultimatum/dac-node-by-theug/main/dac.sh
 chmod +x dac.sh
 ./dac.sh
 ```
 
 ---
 
-## 🔐 Wallet Creation
+## 🔐 Wallet Setup
 
 The script will:
 
-- Generate a new wallet using DAC CLI
+- Create a new wallet using DAC CLI
 - Ask you to set a password
-- Store wallet securely
+- Store keystore file locally
 
-📁 Location:
+📁 Wallet location:
+
 ```bash
 ~/dac-node/data/keystore
 ```
 
 ⚠️ IMPORTANT:
+
 - Save your password
 - Backup keystore file
 - No recovery if lost
 
 ---
 
-## 💧 Faucet (Important Step)
+## 💧 Faucet Step
 
 After wallet creation:
 
 1. Copy your wallet address  
-2. Send faucet tokens (testnet)  
-3. Confirm in script → then node starts  
+2. Send faucet (DAC testnet tokens)  
+3. Confirm inside script  
 
 ---
 
-## 🚀 Running Node Manually
+## 🚀 Node Execution
+
+Node runs automatically in background using:
 
 ```bash
-cd ~/dac-node
-./dacnode --testnet --identity "your-node-name" --datadir ./data
+screen
 ```
 
 ---
 
-## 🖥️ View Logs
+## 📜 View Logs
 
 ```bash
 screen -r dacnode
 ```
 
 Detach safely:
+
 ```bash
 CTRL + A + D
 ```
@@ -98,37 +103,35 @@ screen -S dacnode -X quit
 ## 🧹 Cleanup (Full Reset)
 
 ```bash
-wget https://raw.githubusercontent.com/TheUGultimatum/quip-node-for-vps/main/cleanup.sh
+wget https://raw.githubusercontent.com/TheUGultimatum/dac-node-by-theug/main/cleanup.sh
 chmod +x cleanup.sh
 ./cleanup.sh
 ```
 
 ---
 
-## 🧠 Node Types (Understanding)
+## 🧠 Node Types (DAC Network)
 
-DAC Network includes:
+- Light Node → basic participation  
+- Validator → requires ~1000 DACT  
+- Supervisor → requires ~100,000 DACT  
 
-- 🔹 Light Node → basic participation  
-- 🔹 Validator → requires ~1000 DACT  
-- 🔹 Supervisor → requires ~100,000 DACT  
-
-👉 This script runs a **Testnet Node**
+👉 This script runs a Testnet node.
 
 ---
 
 ## 🔒 Security Tips
 
 - Never share private key  
-- Keep backups offline  
+- Backup keystore file offline  
 - Use strong password  
 
 ---
 
 ## ⚡ Notes
 
-- No Docker required  
 - Uses official DAC binary  
+- No Docker required  
 - Works on most VPS providers  
 - Compatible with WSL  
 
@@ -136,7 +139,7 @@ DAC Network includes:
 
 ## 👑 Author
 
-**TheUGultimatum**
+TheUGultimatum
 
 ---
 
@@ -146,8 +149,7 @@ If this helped you:
 
 - ⭐ Star the repo  
 - 🔁 Share with others  
-- 🧠 Follow for more node guides  
 
 ---
 
-🔥 *Run nodes like a pro. Stay ahead of the crowd.*
+🔥 Run nodes like a pro.
